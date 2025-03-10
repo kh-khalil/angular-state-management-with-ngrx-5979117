@@ -32,13 +32,13 @@ To resolve this issue:
 
 ## Instructor
 
-Instructor name
+Alain Chautard
 
-Instructor description
+Google Developer Expert in Angular - Microsoft MVP Web technologies
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/alain-r-chautard).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
