@@ -5,6 +5,8 @@ This is the repository for the LinkedIn Learning course `Angular State Managemen
 
 ## Course Description
 
+Once you've worked with Angular awhile, you discover that the difficult part of architecting apps is making sure data flows and is refreshed in the UI in a consistent way. This process is called state management. In this course, Instructor Alain Chautard teaches the principles of state management in the context of reactive programming, giving you a solid foundation for your Angular architecture. Learn how to react to and trigger state changes, dispatch actions, and work with effects, selectors, and entities. Plus, find out to build a robust component architecture with NgRx, including the recently added signal store. NgRx has quickly become the go-to solution for state management in large Angular applications, and Alain makes sure you know how to use NgRx to provide an Angular-specific implementation of Redux that supports lazy-loaded modules, observables, and asynchronous side effects.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has folders for each of the videos in the course. 
@@ -35,6 +37,5 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/learning-ngrx
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
-
+[lil-course-url]: https://www.linkedin.com/learning/angular-state-management-with-ngrx
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQGw6T38odF5qA/learning-public-crop_675_1200/B4EZanJV6FHMAY-/0/1746560968309?e=2147483647&v=beta&t=Mv03f01LcqtYf5Vutyk8h3uZM2WRoi_9xa5PWmkWlQA
