@@ -3,17 +3,20 @@
 
   <select #countrySel class="form-control">
     @for(country of countries(); track country.code) {
-      <option [value]="country.code">
-        {{country.name}}
-      </option>
+    <option [value]="country.code">
+      {{ country.name }}
+    </option>
     }
   </select>
 
-  <h2>Enter a zipcode:</h2>
+  <h2>Enter a zipCode:</h2>
 
-  <input type="text" #zipcode placeholder="Zipcode" class="form-control">
-  <br>
-  <button class="btn btn-primary" (click)="addLocation(zipcode.value, countrySel.value)" >
+  <input type="text" #zipCode placeholder="Zipcode" class="form-control" />
+  <br />
+  <button
+    class="btn btn-primary"
+    (click)="addLocation(zipCode.value, countrySel.value)"
+  >
     Add location
   </button>
 </div>

@@ -1,18 +1,21 @@
-import {Component, input, output} from '@angular/core';
-import {Country} from '../app.types';
+import { Component, input, output } from '@angular/core';
+import { Country } from '../app.types';
+
+export interface ZipCodeEntry {
+  zipCode: string;
+  countryCode: string;
+}
 
 @Component({
   selector: 'app-zipcode-entry',
-  templateUrl: './zipcode-entry.component.html'
+  templateUrl: './zipcode-entry.component.html',
 })
 export class ZipcodeEntryComponent {
-
   countries = input.required<Country[]>();
-  zipAdded = output<string>();
+  zipAdded = output<ZipCodeEntry>();
 
-  addLocation(zipcode: string, country: string) {
+  addLocation(zipCode: string, countryCode: string) {
     // TODO Add support for country here
-    this.zipAdded.emit(zipcode);
+    this.zipAdded.emit({ zipCode, countryCode });
   }
-
 }

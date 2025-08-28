@@ -1,34 +1,34 @@
-import {Component, inject} from '@angular/core';
-import {ZipcodeEntryComponent} from '../zipcode-entry/zipcode-entry.component';
-import {CurrentConditionsComponent} from '../current-conditions/current-conditions.component';
-import {Store} from '@ngrx/store';
-import {ZipCodeActions} from '../actions/zip-code.actions';
-import {CurrentConditionsState} from '../reducers/current-conditions.reducer';
-import {selectCurrentConditions} from '../reducers';
-import {WeatherService} from '../weather.service';
-import {CountriesStore} from '../countries.store';
+import { Component, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ZipCodeActions } from '../actions/zip-code.actions';
+import { CountriesStore } from '../countries.store';
+import { CurrentConditionsComponent } from '../current-conditions/current-conditions.component';
+import { selectCurrentConditions } from '../reducers';
+import { CurrentConditionsState } from '../reducers/current-conditions.reducer';
+import {
+  ZipCodeEntry,
+  ZipcodeEntryComponent,
+} from '../zipcode-entry/zipcode-entry.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [
-    ZipcodeEntryComponent,
-    CurrentConditionsComponent
-  ],
-  templateUrl: './main-page.component.html'
+  imports: [ZipcodeEntryComponent, CurrentConditionsComponent],
+  templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
-
   private store = inject(Store);
-  countries = inject(CountriesStore).countries;
+  private countriesStore = inject(CountriesStore);
+  countries = this.countriesStore.countries;
 
-  addLocation(zipcode : string){
-    this.store.dispatch(ZipCodeActions.addZipCode({zipcode}));
+  addLocation(zipCodeEntry: ZipCodeEntry) {
+    this.countriesStore.selectCountry(zipCodeEntry.countryCode);
+    this.store.dispatch(ZipCodeActions.addZipCode(zipCodeEntry));
   }
-  currentConditions = this.store.selectSignal<CurrentConditionsState>(selectCurrentConditions);
+  currentConditions = this.store.selectSignal<CurrentConditionsState>(
+    selectCurrentConditions
+  );
 
-  removeZip(zipcode: string) {
-    this.store.dispatch(ZipCodeActions.removeZipCode({zipcode}));
+  removeZip(zipCode: string) {
+    this.store.dispatch(ZipCodeActions.removeZipCode({ zipCode }));
   }
-
-
 }
